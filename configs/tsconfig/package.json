@@ -1,0 +1,12 @@
+{
+  "name": "@repo/ts-config",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}

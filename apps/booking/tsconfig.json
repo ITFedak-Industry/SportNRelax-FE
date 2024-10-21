@@ -1,0 +1,22 @@
+{
+  "extends": "@repo/ts-config/appConfig.json",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@src/*": ["./src/*"]
+    },
+    "typeRoots": ["./types"]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "./src/*.tsx"
+  ],
+  "exclude": ["node_modules"]
+}

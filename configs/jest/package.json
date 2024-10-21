@@ -1,0 +1,12 @@
+{
+  "name": "@repo/jest-config",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "clean": "rimraf node_modules"
+  },
+  "devDependencies": {
+    "rimraf": "3.0.2"
+  }
+}

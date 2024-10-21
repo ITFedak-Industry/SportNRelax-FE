@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "extends": [
+    "@repo/eslint-config/app.js",
+    "next/core-web-vitals",
+    "next/typescript"
+  ],
+  "ignorePatterns": ["node_modules/", "tsconfig.json"]
+}
