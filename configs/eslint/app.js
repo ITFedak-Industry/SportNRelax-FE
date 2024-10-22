@@ -1,7 +1,33 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  plugins: ['prettier'],
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+  ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react', '@typescript-eslint', 'jsx-a11y', 'prettier'],
   rules: {
+    'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+        singleQuote: true,
+        printWidth: 80,
+        semi: true,
+      },
+    ],
     semi: ['error', 'always'],
     '@typescript-eslint/explicit-module-boundary-types': ['error'],
     '@typescript-eslint/no-explicit-any': ['error'],
@@ -12,8 +38,13 @@ module.exports = {
     'no-console': [2, { allow: ['warn', 'error'] }],
     'no-control-regex': 0,
     'object-curly-spacing': ['error', 'always'],
-    'prettier/prettier': ['error', { endOfLine: 'auto' }],
     'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
   ignorePatterns: ['.*.js', '*.snap'],
 };

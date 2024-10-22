@@ -1,6 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const packageConfig = require('@repo/jest-config/package');
+
 module.exports = {
-  preset: 'ts-jest',
   ...packageConfig,
   moduleNameMapper: {
     // if your using tsconfig.paths thers is no harm in telling jest

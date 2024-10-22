@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": ["@repo/eslint-config/package.js", "plugin:storybook/recommended"],
+  "plugins": ["react-refresh"],
+  "ignorePatterns": ["node_modules/", "tsconfig.json"],
+  "overrides": [
+    {
+      "files": ["**/.storybook/**", "**/*.stories.ts", "**/*.config.ts"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ]
+}
