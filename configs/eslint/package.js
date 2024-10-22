@@ -13,6 +13,7 @@ module.exports = {
     'no-control-regex': 0,
     'object-curly-spacing': ['error', 'always'],
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    'react/react-in-jsx-scope': 'off',
   },
   ignorePatterns: ['.*.js', '*.snap'],
 };

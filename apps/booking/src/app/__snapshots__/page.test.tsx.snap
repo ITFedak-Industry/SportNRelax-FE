@@ -8,6 +8,7 @@ exports[`Page should match the snapshot 1`] = `
     <main
       class="flex flex-col gap-8 row-start-2 items-center sm:items-start"
     >
+      0
       <img
         alt="Next.js logo"
         class="dark:invert"
@@ -36,6 +37,30 @@ exports[`Page should match the snapshot 1`] = `
           Save and see your changes instantly.
         </li>
       </ol>
+      <h1
+        style="color: red;"
+      >
+        Vite + React Go fuck yourself
+      </h1>
+      <div
+        class="card"
+      >
+        <button>
+          count is 0
+        </button>
+        <p>
+          Edit 
+          <code>
+            src/App.tsx
+          </code>
+           and save to test HMR
+        </p>
+      </div>
+      <p
+        class="read-the-docs"
+      >
+        Click on the Vite and React logos to learn more
+      </p>
       <div
         class="flex gap-4 items-center flex-col sm:flex-row"
       >

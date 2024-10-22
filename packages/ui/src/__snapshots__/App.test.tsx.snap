@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+<DocumentFragment>
+  <h1
+    style="color: red;"
+  >
+    Vite + React Go fuck yourself
+  </h1>
+  <div
+    class="card"
+  >
+    <button>
+      count is 0
+    </button>
+    <p>
+      Edit 
+      <code>
+        src/App.tsx
+      </code>
+       and save to test HMR
+    </p>
+  </div>
+  <p
+    class="read-the-docs"
+  >
+    Click on the Vite and React logos to learn more
+  </p>
+</DocumentFragment>
+`;

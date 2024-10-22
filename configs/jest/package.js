@@ -1,6 +1,9 @@
 module.exports = {
   // https://github.com/zeit/next.js/issues/8663#issue-490553899
-  collectCoverageFrom: ['**/*.{js,ts}', '!**/node_modules/**', '!**/vendor/**'],
+  collectCoverageFrom: [
+    '**/__tests__/**/*.[jt]s?(x)',
+    '**/?(*.)+(spec|test).[tj]s?(x)',
+  ],
   coverageReporters: [
     'cobertura',
     'json-summary',
@@ -11,7 +14,6 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   maxWorkers: '50%',
-  moduleFileExtensions: ['ts', 'js', 'json', 'node'],
   // reporters: [
   //   'default',
   //   [
@@ -19,6 +21,20 @@ module.exports = {
   //     { outputDirectory: 'coverage/junit', outputName: 'junit-report.xml' },
   //   ],
   // ],
-  // Override the default 5000 timeout for all tests
+
+  // Indicates which provider should be used to instrument code for coverage
+  coverageProvider: 'v8',
+  coverageReporters: ['json', 'lcov', 'text', 'html'],
+
+  coverageThreshold: {
+    global: {
+      statements: 50,
+      branches: 50,
+      functions: 45,
+      lines: 45,
+    },
+  },
+  // The test environment that will be used for testing
+  testEnvironment: 'jsdom',
   testTimeout: 10000,
 };

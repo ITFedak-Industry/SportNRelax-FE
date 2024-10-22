@@ -1,6 +1,9 @@
 module.exports = {
   // https://github.com/zeit/next.js/issues/8663#issue-490553899
-  collectCoverageFrom: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
+  collectCoverageFrom: [
+    '**/__tests__/**/*.[jt]s?(x)',
+    '**/?(*.)+(spec|test).[tj]s?(x)',
+  ],
   coverageReporters: [
     'cobertura',
     'json-summary',
