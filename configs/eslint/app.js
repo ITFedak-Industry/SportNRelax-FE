@@ -1,5 +1,4 @@
 /** @type {import("eslint").Linter.Config} */
-
 module.exports = {
   env: {
     browser: true,
@@ -11,12 +10,19 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['react', '@typescript-eslint', 'jsx-a11y', 'prettier'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'jsx-a11y',
+    'react-hooks',
+    'prettier',
+  ],
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',

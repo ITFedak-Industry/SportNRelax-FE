@@ -1,9 +1,17 @@
 {
   "root": true,
   "extends": [
-    "next/core-web-vitals",
     "next/typescript",
+    "plugin:@next/next/recommended",
     "@repo/eslint-config/app.js"
+  ],
+  "overrides": [
+    {
+      "files": ["**/.storybook/**", "**/*.stories.tsx", "**/*.config.ts"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
   ],
   "ignorePatterns": ["node_modules/", "tsconfig.json"]
 }
