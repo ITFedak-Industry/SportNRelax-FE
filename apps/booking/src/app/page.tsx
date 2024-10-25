@@ -22,6 +22,7 @@ export default async function Page() {
   ];
 
   // Monitor page performance in case to alter what to pass from Server -> Client Component
+  // **But it is just for future. Performance is not impacted drastically, so cleaner architecture may be better then pre-emptive optimization**
   // console.log(data) // size(data) = N kilobytes
   // console.log(ssrPreloadActions) // size(ssrPreloadActions) = N kilobytes + Redux type/meta
 
