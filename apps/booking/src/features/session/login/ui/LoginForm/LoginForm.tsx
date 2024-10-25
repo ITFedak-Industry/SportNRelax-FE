@@ -1,14 +1,17 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
+
 import { useFeatureSlicedDebug } from '@/shared/lib';
 import { useAppDispatch } from '@/shared/model';
 import { Button } from '@/shared/ui';
+
 import { loginThunk } from '../../model/login';
 import {
   type LoginFormSchema,
   loginFormSchema,
 } from '../../model/loginFormSchema';
+
 import css from './LoginForm.module.css';
 
 type Props = {
@@ -34,7 +37,7 @@ export function LoginForm(props: Props) {
       dispatch(loginThunk({ email, password }))
         .unwrap()
         .then(() => props.onComplete?.())
-        .catch((error) => {
+        .catch((error: Error) => {
           setError('email', { type: 'server', message: error.message });
         });
     },

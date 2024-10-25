@@ -1,7 +1,7 @@
 import cn from 'classnames';
-import { Link } from 'react-router-dom';
 import type { Category } from '../../model/types';
 import css from './CategoryCard.module.css';
+import Link from 'next/link';
 
 type Props = {
   category: Category;
@@ -11,7 +11,7 @@ export function CategoryCard(props: Props) {
   const { name, image, id } = props.category;
 
   return (
-    <Link to={`/category/${id}`}>
+    <Link href={`/category/${id}`}>
       <div className={css.root}>
         <div
           className={css.image}

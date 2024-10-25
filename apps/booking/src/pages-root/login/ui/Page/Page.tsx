@@ -1,15 +1,19 @@
+'use client';
 import { useCallback } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { LoginForm } from '@/features/session/login';
+import { usePathname, useRouter } from 'next/navigation';
+
 import { env } from '@/shared/lib';
 
+import { LoginForm } from '@/features/session/login';
+
 export function LoginPage() {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const onComplete = useCallback(() => {
-    navigate(location.state?.returnUrl ?? '/');
-  }, [navigate]);
+    router.push(pathname ?? '/');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>

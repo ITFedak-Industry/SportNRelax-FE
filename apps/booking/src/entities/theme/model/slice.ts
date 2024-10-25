@@ -6,9 +6,11 @@ type ThemeSliceState = {
 };
 
 const initialState: ThemeSliceState = {
-  currentTheme: window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light',
+  currentTheme:
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light',
 };
 
 export const themeSlice = createSlice({

@@ -1,9 +1,12 @@
 import cn from 'classnames';
 import type { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+
 import { useFeatureSlicedDebug } from '@/shared/lib';
+
 import { formatPrice } from '../../lib/formatPrice';
 import type { Product } from '../../model/types';
+
 import css from './ProductCard.module.css';
 
 type Props = {
@@ -22,7 +25,7 @@ export function ProductCard(props: Props) {
 
   return (
     <Link
-      to={`/product/${product.id}`}
+      href={`/product/${product.id}`}
       className={cn(css.root, css[`root_size_${size}`])}
       {...rootAttributes}
     >

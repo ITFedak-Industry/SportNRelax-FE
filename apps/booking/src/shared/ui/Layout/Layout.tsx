@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import { Outlet, ScrollRestoration } from 'react-router-dom';
 import css from './Layout.module.css';
 
 type Props = {
@@ -17,9 +16,7 @@ export function Layout(props: Props) {
       {props.navbarSlot}
       {props.headerSlot}
       <div className={css.container}>
-        <div className={css.content}>
-          <Outlet />
-        </div>
+        <div className={css.content}></div>
         {props.sidebarSlot && (
           <aside className={css.sidebar}>{props.sidebarSlot}</aside>
         )}
@@ -33,7 +30,6 @@ export function Layout(props: Props) {
         </div>
       </footer>
       {props.bottomSlot}
-      <ScrollRestoration />
     </div>
   );
 }

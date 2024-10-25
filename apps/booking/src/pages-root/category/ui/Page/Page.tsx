@@ -1,14 +1,19 @@
 import { useLayoutEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { z } from 'zod';
-import { useCategoryDetailsQuery } from '@/entities/category';
-import type { CategoryId } from '@/entities/category/model/types';
-import { useFeatureToggle } from '@/entities/featureToggle';
-import { type ProductSortBy, SortByDropdown } from '@/features/product/sortBy';
+import Link from 'next/link';
+
 import { useTypedParams, useTypedQueryParams } from '@/shared/lib/router';
 import { useAppDispatch, useAppSelector } from '@/shared/model';
 import { PageHeader } from '@/shared/ui';
+
+import { useCategoryDetailsQuery } from '@/entities/category';
+import type { CategoryId } from '@/entities/category/model/types';
+import { useFeatureToggle } from '@/entities/featureToggle';
+
+import { type ProductSortBy, SortByDropdown } from '@/features/product/sortBy';
+
 import { BaseProductList } from '@/widgets/BaseProductList';
+
 import { changeSortBy, selectSortBy } from '../../model/slice';
 
 const pageParamsSchema = z.object({

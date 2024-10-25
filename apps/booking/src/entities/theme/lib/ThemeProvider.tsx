@@ -1,3 +1,4 @@
+'use client';
 import { type ReactNode, useEffect } from 'react';
 import { useFeatureToggle } from '@/entities/featureToggle/@x/theme';
 import { useAppDispatch, useAppSelector } from '@/shared/model/hooks';
@@ -26,7 +27,7 @@ export function ThemeProvider({ children, theme }: Props) {
     }
 
     document.documentElement.setAttribute('data-theme', currentTheme);
-  }, [currentTheme, theme, darkModeIsEnabled]);
+  }, [currentTheme, theme, darkModeIsEnabled, dispatch]);
 
   return <>{children}</>;
 }

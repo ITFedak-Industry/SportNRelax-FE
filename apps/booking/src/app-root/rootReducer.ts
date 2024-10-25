@@ -1,10 +1,14 @@
 import { combineReducers } from '@reduxjs/toolkit';
+
+import { baseApi } from '@/shared/api';
+
 import { cartSlice } from '@/entities/cart';
 import { sessionSlice } from '@/entities/session';
 import { themeSlice } from '@/entities/theme';
 import { wishlistSlice } from '@/entities/wishlist';
-import { categoryPageSlice } from '@/pages/category';
-import { baseApi } from '@/shared/api';
+
+import { categoryPageSlice } from '@/pages-root/category';
+
 import { debugModeSlice } from '@/widgets/DebugModeToggler';
 
 export const rootReducer = combineReducers({

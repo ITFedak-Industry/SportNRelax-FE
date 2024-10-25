@@ -1,7 +1,6 @@
-import { useModal } from '@ebay/nice-modal-react';
 import { type ReactNode, useEffect } from 'react';
 import { Icon } from '@/shared/ui';
-import css from './Modal.module.css';
+// import css from './Modal.module.css';
 
 type Props = {
   children: ReactNode;
@@ -10,9 +9,7 @@ type Props = {
 const BODY_MODAL_IS_OPENED_CLASS = 'modalIsOpened';
 
 export function Modal(props: Props) {
-  const modal = useModal();
-
-  const onEscapeKeyClick = () => modal.remove();
+  const onEscapeKeyClick = () => {};
 
   useEffect(() => {
     document.addEventListener('keydown', onEscapeKeyClick);

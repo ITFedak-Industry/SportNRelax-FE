@@ -1,11 +1,14 @@
 import React, { useCallback, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import type { ProductId } from '@/entities/product';
-import { selectIsAuthorized } from '@/entities/session';
-import { selectIsInWishlist } from '@/entities/wishlist';
+import { useRouter } from 'next/router';
+
 import { useConfirmModal, useFeatureSlicedDebug } from '@/shared/lib';
 import { useAppDispatch, useAppSelector } from '@/shared/model';
 import { Button } from '@/shared/ui';
+
+import type { ProductId } from '@/entities/product';
+import { selectIsAuthorized } from '@/entities/session';
+import { selectIsInWishlist } from '@/entities/wishlist';
+
 import { toggleWishlistProductThunk } from '../../model/toggleWishlistProduct';
 
 type Props = {
@@ -16,7 +19,7 @@ export function AddToWishlistButton({ productId }: Props) {
   const [isLoading, setIsLoading] = useState(false);
   const { rootAttributes } = useFeatureSlicedDebug('feature/AddToWishlist');
   const loginModal = useConfirmModal();
-  const navigate = useNavigate();
+  const router = useRouter();
   const isAuthorized = useAppSelector(selectIsAuthorized);
   const isInWishlist = useAppSelector((state) =>
     selectIsInWishlist(state, productId),
@@ -35,9 +38,7 @@ export function AddToWishlistButton({ productId }: Props) {
           cancelText: 'Later',
           onConfirm: () => {
             loginModal.remove();
-            navigate('/login', {
-              state: { returnUrl: `/product/${productId}` },
-            });
+            router.push('/login');
           },
           onCancel: () => loginModal.remove(),
         });
@@ -50,7 +51,7 @@ export function AddToWishlistButton({ productId }: Props) {
         setIsLoading(false);
       });
     },
-    [productId, isAuthorized],
+    [isAuthorized, dispatch, productId, loginModal, router],
   );
 
   return (

@@ -9,3 +9,4 @@ export { wait } from './wait';
 export { debounce } from './debounce';
 export { useConfirmModal } from './useConfirmModal';
 export { getQueryParams, useTypedParams } from './router';
+export { useSSRPreload } from './ssr';

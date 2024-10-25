@@ -8,14 +8,18 @@ import {
   REGISTER,
   REHYDRATE,
   persistReducer,
-  persistStore,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
+import { baseApi } from '@/shared/api';
+
 import { sessionSlice } from '@/entities/session';
 import { themeSlice } from '@/entities/theme';
+
 import { logoutMiddleware } from '@/features/session/logout';
-import { baseApi } from '@/shared/api';
+
 import { debugModeSlice } from '@/widgets/DebugModeToggler';
+
 import { rootReducer } from './rootReducer';
 
 const persistConfig = {
@@ -26,6 +30,9 @@ const persistConfig = {
 
 export function makeStore() {
   const store = configureStore({
+    devTools: {
+      name: 'Booking',
+    },
     // 👇 ATTENTION: persistReducer broke infering RootState
     reducer: persistReducer(
       persistConfig,
@@ -44,10 +51,8 @@ export function makeStore() {
   return store;
 }
 
-export const appStore = makeStore();
-export const persistedStore = persistStore(appStore);
-
+// Infer the type of makeStore
+export type AppStore = ReturnType<typeof makeStore>;
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof appStore.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof appStore.dispatch;
+export type RootState = ReturnType<AppStore['getState']>;
+export type AppDispatch = AppStore['dispatch'];

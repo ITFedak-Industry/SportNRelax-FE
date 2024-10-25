@@ -1,10 +1,11 @@
-import 'rc-dropdown/assets/index.css';
-import Dropdown from 'rc-dropdown';
 import { useState } from 'react';
+
 import { useFeatureSlicedDebug } from '@/shared/lib';
 import { Icon } from '@/shared/ui';
+
 import { productSortByNamesMap } from '../../model/consts';
 import type { ProductSortBy } from '../../model/types';
+
 import { SortByOptions } from '../SortByOptions/SortByOptions';
 import css from './SortByDropdown.module.css';
 
@@ -21,6 +22,8 @@ export function SortByDropdown(props: Props) {
   const [sortBy, setSortBy] = useState<ProductSortBy>(
     props.defaultSortBy ?? 'Featured',
   );
+
+  return null;
 
   return (
     <Dropdown
