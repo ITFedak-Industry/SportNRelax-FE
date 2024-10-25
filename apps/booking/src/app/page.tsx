@@ -21,6 +21,10 @@ export default async function Page() {
     ]),
   ];
 
+  // Monitor page performance in case to alter what to pass from Server -> Client Component
+  // console.log(data) // size(data) = N kilobytes
+  // console.log(ssrPreloadActions) // size(ssrPreloadActions) = N kilobytes + Redux type/meta
+
   return (
     <>
       <MainPage ssrPreloadActions={ssrPreloadActions} />
