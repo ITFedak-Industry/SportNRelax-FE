@@ -1,5 +1,5 @@
 'use server';
-import { popularCategoriesQuery, categoryApi } from '@/entities/category';
+import { popularCategoriesQuery } from '@/entities/category';
 
 import { MainPage } from '@/pages-root/main';
 
@@ -11,24 +11,9 @@ export default async function Page() {
     return <h1>Not found</h1>;
   }
 
-  const ssrPreloadActions = [
-    categoryApi.util.upsertQueryEntries([
-      {
-        endpointName: 'popularCategories',
-        arg: undefined,
-        value: data,
-      },
-    ]),
-  ];
-
-  // Monitor page performance in case to alter what to pass from Server -> Client Component
-  // **But it is just for future. Performance is not impacted drastically, so cleaner architecture may be better then pre-emptive optimization**
-  // console.log(data) // size(data) = N kilobytes
-  // console.log(ssrPreloadActions) // size(ssrPreloadActions) = N kilobytes + Redux type/meta
-
   return (
     <>
-      <MainPage ssrPreloadActions={ssrPreloadActions} />
+      <MainPage categories={data} />
     </>
   );
 }

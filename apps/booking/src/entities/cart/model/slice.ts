@@ -4,14 +4,18 @@ import {
   createSlice,
 } from '@reduxjs/toolkit';
 import type { Product, ProductId } from '@/entities/product/@x/cart';
+
+import { Category, saveCategory } from '@/entities/category'; // folder should be @x for cross imports
+
 import { cartApi } from '../api/cartApi';
 import type { Cart, CartItem } from './types';
 
-type CartSliceState = Cart;
+type CartSliceState = Cart & { categories: Category[] };
 
 const initialState: CartSliceState = {
   itemsMap: {},
   version: 0,
+  categories: [],
 };
 
 function createCartItem(product: Product): CartItem {
@@ -61,6 +65,9 @@ export const cartSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    builder.addCase(saveCategory, (state: CartSliceState, { payload }) => {
+      state.categories = payload;
+    });
     builder.addMatcher(
       cartApi.endpoints.cart.matchFulfilled,
       (state: CartSliceState, { payload }) => {

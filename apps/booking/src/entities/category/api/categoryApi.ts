@@ -1,59 +1,27 @@
-import {
-  FetchBaseQueryError,
-  FetchBaseQueryMeta,
-  QueryReturnValue,
-} from '@reduxjs/toolkit/query';
-
 import { baseApi } from '@/shared/api';
 
-import { mapCategory } from '../lib/mapCategory';
 import { mapCategoryWithProducts } from '../lib/mapCategoryWithProducts';
 
 import type { Category, CategoryWithProducts } from '../model/types';
 
 import type {
   CategoryDetailsRequestArgs,
-  CategoryDto,
   CategoryWithProductsDto,
 } from './types';
 
-export const popularCategoriesQuery = async (): Promise<
-  QueryReturnValue<
-    Category[],
-    FetchBaseQueryError,
-    FetchBaseQueryMeta | undefined
-  >
-> => {
-  const categories: CategoryDto[] = [
-    { id: 33, name: 'string', imageUrl: ['sasdasd'] },
-    { id: 334, name: 'string', imageUrl: ['sasdasd'] },
-    { id: 335, name: 'string', imageUrl: ['sasdasd'] },
-    { id: 336, name: 'string', imageUrl: ['sasdasd'] },
-  ];
-  try {
-    return {
-      data: await new Promise<Category[]>((resolve) => {
-        setTimeout(() => {
-          const mapped = categories.map(mapCategory);
-          // reject(new Error('Something went wrong'));
-          resolve(mapped);
-        }, 1000);
-      }),
-    };
-  } catch (err) {
-    return {
-      error: {
-        status: 500,
-        data: (err as Error).message,
-      },
-    };
-  }
-};
+import { popularCategoriesQuery } from './requests';
+import { saveCategory } from './actions';
 
 export const categoryApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     popularCategories: build.query<Category[], void>({
-      queryFn: () => popularCategoriesQuery(),
+      queryFn: async (_args, { dispatch }) => {
+        const response = await popularCategoriesQuery();
+        if (response.data) {
+          dispatch(saveCategory(response.data));
+        }
+        return response;
+      },
     }),
     categoryDetails: build.query<
       CategoryWithProducts,
