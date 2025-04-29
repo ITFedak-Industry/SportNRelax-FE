@@ -7,11 +7,17 @@
       }
     ],
     "paths": {
-      "@src/*": ["./core/*"]
+      "@src/*": ["./src/core/*"]
     },
     "jsx": "preserve",
     "types": ["jest", "node"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.test.ts", ".next/types/**/*.ts"],
+  "include": [
+    "**/*.test.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

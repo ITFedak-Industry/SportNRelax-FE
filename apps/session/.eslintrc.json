@@ -1,0 +1,5 @@
+{
+  "root": true,
+  "extends": ["@repo/eslint-config/app.js"],
+  "ignorePatterns": ["node_modules/", "tsconfig.json"]
+}

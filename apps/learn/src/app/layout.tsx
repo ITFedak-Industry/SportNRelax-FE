@@ -1,9 +1,11 @@
 import { ReactNode } from 'react';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-import { ThemeProvider } from '@src/entities/theme';
-import StoreProvider from '@src/app/StoreProvider';
+import { QueryProvider } from '@src/app/QueryProvider';
 
-import '@src/shared/base.css';
+import '../core/shared/base.css';
+
+// TanStack Query SSR:  https://tanstack.com/query/latest/docs/framework/react/guides/ssr#full-nextjs-pages-router-example
 
 // eslint-disable-next-line import/no-default-export
 export default async function RootLayout({
@@ -11,23 +13,13 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 }) {
-  // useEffect(() => {
-  //   // Lazy-load MSW for development
-  //   const startMockWorker = async () => {
-  //     if (process.env.NODE_ENV === 'development') {
-  //       const { startApiMockWorker } = await import('@/app-root/apiMockWorker');
-  //       await startApiMockWorker();
-  //     }
-  //   };
-  //   startMockWorker();
-  // }, []);
-
   return (
     <html lang="en">
       <body>
-        <StoreProvider>
-          <ThemeProvider>{children}</ThemeProvider>
-        </StoreProvider>
+        <QueryProvider>
+          {children}
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryProvider>
       </body>
     </html>
   );

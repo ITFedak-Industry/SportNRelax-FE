@@ -5,13 +5,9 @@
     "plugin:@next/next/recommended",
     "@repo/eslint-config/app.js"
   ],
-  "overrides": [
-    {
-      "files": ["**/.storybook/**", "**/*.stories.tsx", "**/*.config.ts"],
-      "rules": {
-        "import/no-default-export": "off"
-      }
-    }
-  ],
+  "plugins": ["@tanstack/query"],
+  "rules": {
+    "react/prop-types": [0]
+  },
   "ignorePatterns": ["node_modules/", "tsconfig.json"]
 }

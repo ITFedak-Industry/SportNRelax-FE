@@ -1,0 +1,20 @@
+{
+  "extends": "@repo/ts-config/appConfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "bundler",
+    "paths": {
+      "@src/*": ["./src/*"]
+    },
+    "jsx": "react-jsx",
+    "rootDirs": [".", "./.react-router/types"],
+    "types": ["jest", "node", "vite/client"]
+  },
+  "include": [
+    "**/*",
+    "**/.server/**/*",
+    "**/.client/**/*",
+    ".react-router/types/**/*"
+  ],
+  "exclude": ["node_modules"]
+}
