@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const packageConfig = require('@repo/jest-config/package');
+const packageConfig = require('@repo/jest-config/package.');
 
+// eslint-disable-next-line import/no-default-export
 module.exports = {
   ...packageConfig,
   moduleNameMapper: {

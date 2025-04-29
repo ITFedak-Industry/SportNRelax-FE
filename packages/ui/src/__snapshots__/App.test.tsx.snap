@@ -5,7 +5,7 @@ exports[`App should match the snapshot 1`] = `
   <h1
     style="color: red;"
   >
-    Vite + React Go fuck yourself
+    Vite + React
   </h1>
   <div
     class="card"

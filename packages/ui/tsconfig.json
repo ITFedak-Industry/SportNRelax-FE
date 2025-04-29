@@ -1,5 +1,4 @@
 {
-  "files": [],
   "extends": "@repo/ts-config/packageConfig.json",
-  "include": ["src", "vite.config.ts", "types"]
+  "include": ["src", "vite.config.mjs", "types"]
 }

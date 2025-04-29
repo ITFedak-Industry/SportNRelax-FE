@@ -5,7 +5,7 @@ export function App(): JSX.Element {
 
   return (
     <>
-      <h1 style={{ color: 'red' }}>Vite + React Go fuck yourself</h1>
+      <h1 style={{ color: 'red' }}>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
