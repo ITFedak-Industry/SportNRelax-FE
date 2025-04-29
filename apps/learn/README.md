@@ -1,6 +1,6 @@
 # Learn – Health & Sport Services Aggregator
 
-**Learn** is an SEO-optimized platform built with **Next.js**, **Redux**, and **Feature-Sliced Architecture (FSD)**. The app connects users with sport and health service providers and includes educational material, platform updates, and community blog content.
+**Learn** is an SEO-optimized platform built with **Next.js**, **React Query**, and **Feature-Sliced Architecture (FSD)**. The app connects users with sport and health service providers and includes educational material, platform updates, and community blog content.
 
 ## 🌐 Live Demo
 
@@ -89,7 +89,7 @@ npm run test:watch
 ## 📦 Dependencies
 
 - [Next.js](https://nextjs.org/) – For server-side rendering and SEO
-- [Redux Toolkit](https://redux-toolkit.js.org/) – Global state management
+- [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/examples/basic/) – Powerful asynchronous state management for React
 - [Jest](https://jestjs.io/) – Testing framework
 - [ESLint](https://eslint.org/) – Code quality
 - [Feature-Sliced Design](https://feature-sliced.design/) – Architectural guideline

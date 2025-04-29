@@ -1,69 +1,51 @@
-# Learn – Health & Sport Services Aggregator
+# Sessions – Sport & Relax Service Manager
 
-**Learn** is an SEO-optimized platform built with **Next.js**, **Redux**, and **Feature-Sliced Architecture (FSD)**. The app connects users with sport and health service providers and includes educational material, platform updates, and community blog content.
-
-## 🌐 Live Demo
-
-Coming soon...
+**Sessions** is a modern React-based application for browsing and booking sessions for sport and relaxation services. It leverages **React Router**, **Redux Toolkit**, and **RTK Query** to deliver a fast, modular, and maintainable experience based on the **Feature-Sliced Design (FSD)** methodology.
 
 ---
 
 ## 🚀 Features
 
-- ⚡️ **Next.js-powered SSR** for great SEO and performance
-- 🧩 **Feature-Sliced Architecture (FSD)** for scalable and maintainable codebase
-- 🧠 **Educational content** for onboarding and user support
-- 🗃 **Main Page** to explore vendors and services
-- ℹ️ **About Platform** to understand the mission and how it works
-- 📝 **Blog pages** for:
-  - Platform owners to share updates and news
-  - Service providers and users to share insights and interests
+- 🔀 **React Router** for dynamic client-side routing
+- ⚙️ **Redux Toolkit** for predictable state management
+- 🌐 **RTK Query** for efficient data fetching and caching
+- 🧩 **Feature-Sliced Architecture (FSD)** for scalable and modular codebase
+- 📅 **Service booking** system for sport or relax activities
+- 🔄 Auto-refresh and invalidation of booked sessions
 - 🧪 **Jest** support for unit testing
 
 ---
 
 ## 🧑‍🏫 What Users Can Do
 
-### ✅ Discover Services
+### ✅ Browse & Book Services
 
-From the **Main Page**, users can browse curated listings of health and sport service providers, compare offerings, and initiate contact or bookings.
+- View available sport and relax services
+- Book sessions and view upcoming bookings
 
-### 📘 Learn How to Use
+### 🧰 Admin or Staff (Coming soon)
 
-The `Learn` section provides:
+- Service providers will be able to manage availability and bookings
 
-- Tutorials on using the platform
-- Tips on selecting a provider
-- Guidance for service providers on how to join
-
-### ℹ️ About the Platform
-
-This section answers:
-
-- Who we are and our mission
-- How vendors are selected and verified
-- How we ensure trust and safety
-
-### 📝 Blog Functionality
-
-- **Owners**: Post platform news, feature rollouts, insights
-- **Service Providers & Users**: Publish blog entries around sport, health, training tips, wellness trends, etc.
+---
 
 ## 📁 Project Structure
 
-The project follows the **Feature-Sliced Design (FSD)** methodology for scalable, modular development.
+Following **Feature-Sliced Design**, the codebase is modular and organized around features and domain entities.
 
 ```
 src/
-├── app/           # App-level config and providers (Redux, routing, theming)
-├── entities/      # Core domain models (e.g., user, vendor, blog)
-├── features/      # Functional units (e.g., blog creation, vendor search)
-├── pages/         # Next.js pages
-├── shared/        # Reusable components, UI, hooks, utils
-└── widgets/       # Page-level components (headers, footers, etc.)
+├── app/           # App-level setup (store, router, theming, providers)
+├── entities/      # Domain models (e.g., session, service)
+├── features/      # Business logic units (e.g., booking)
+├── pages/         # Route-specific views (e.g., /main, /services)
+├── shared/        # Reusable UI components, hooks, styles, utils
+└── widgets/       # Layout and UI blocks (e.g., Header, SessionCard)
 ```
 
 > Learn more: [Feature-Sliced Design](https://feature-sliced.design/)
+
+---
 
 ## 🧑‍💻 Getting Started
 
@@ -72,47 +54,41 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🧪 Testing
+## 🔧 Available Scripts
 
 ```bash
-npm test
-# or
-npm run test:watch
+npm run dev        # Start development server
+npm run build      # Production build
+npm run start      # Serve built app
+npm test           # Run tests
 ```
 
 ---
 
-## 📦 Dependencies
+## 📦 Key Dependencies
 
-- [Next.js](https://nextjs.org/) – For server-side rendering and SEO
-- [Redux Toolkit](https://redux-toolkit.js.org/) – Global state management
+- [React](https://reactjs.org/) – Core library
+- [React Router](https://reactrouter.com/) – Routing
+- [Redux Toolkit](https://redux-toolkit.js.org/) – State management
+- [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/overview) – Server state and data fetching
 - [Jest](https://jestjs.io/) – Testing framework
-- [ESLint](https://eslint.org/) – Code quality
-- [Feature-Sliced Design](https://feature-sliced.design/) – Architectural guideline
-
----
-
-## 🔧 Production Build
-
-```bash
-npm run build
-npm run start
-```
+- [ESLint](https://eslint.org/) – Linting
+- [Feature-Sliced Design](https://feature-sliced.design/) – Architecture guideline
 
 ---
 
 ## ✨ Roadmap
 
-- [ ] Vendor dashboard and analytics
-- [ ] Booking and payment integration
-- [ ] Multilingual support
-- [ ] Rich WYSIWYG blog editor
-- [ ] Blog comment and reaction system
-- [ ] Email notifications
+- [ ] Admin dashboard for service providers
+- [ ] Payment gateway integration
+- [ ] Push/email notifications for bookings
+- [ ] Calendar integration (Google, iCal)
+- [ ] Session reminder system
+- [ ] Mobile-optimized views
 
 ---
 
@@ -124,4 +100,4 @@ MIT
 
 ## 👥 Contributing
 
-We welcome contributions! Please open an issue or feature request before submitting a pull request.
+We welcome your input! Feel free to open issues or suggest improvements via pull requests.
