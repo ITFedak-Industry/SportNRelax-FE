@@ -1,6 +1,5 @@
 import cn from 'classnames';
 import type { ReactNode } from 'react';
-import Link from 'next/link';
 
 import { useFeatureSlicedDebug } from '../../../../shared/lib';
 
@@ -24,7 +23,7 @@ export function ProductCard(props: Props) {
   );
 
   return (
-    <Link
+    <a
       href={`/product/${product.id}`}
       className={cn(css.root, css[`root_size_${size}`])}
       {...rootAttributes}
@@ -49,6 +48,6 @@ export function ProductCard(props: Props) {
         )}
       </div>
       {actionSlot && <div className={css.actions}>{actionSlot}</div>}
-    </Link>
+    </a>
   );
 }

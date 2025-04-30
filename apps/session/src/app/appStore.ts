@@ -34,10 +34,11 @@ export function makeStore() {
       name: 'Booking',
     },
     // 👇 ATTENTION: persistReducer broke infering RootState
-    reducer: persistReducer(
-      persistConfig,
-      rootReducer,
-    ) as unknown as typeof rootReducer,
+    // reducer: persistReducer(
+    //   persistConfig,
+    //   rootReducer,
+    // ) as unknown as typeof rootReducer,
+    reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: {

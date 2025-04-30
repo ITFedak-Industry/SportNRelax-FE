@@ -9,6 +9,7 @@ import {
 
 import type { Route } from './+types/home';
 import '@src/shared/base.css';
+import StoreProvider from '../StoreProvider';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -30,7 +31,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 // eslint-disable-next-line import/no-default-export
 export default function App() {
-  return <Outlet />;
+  return (
+    <StoreProvider>
+      <Outlet />
+    </StoreProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

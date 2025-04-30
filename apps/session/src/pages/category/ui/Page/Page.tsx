@@ -1,6 +1,5 @@
 import { useLayoutEffect } from 'react';
 import { z } from 'zod';
-import Link from 'next/link';
 
 import {
   useTypedParams,
@@ -70,7 +69,7 @@ export function CategoryPage() {
   if (!data?.products) {
     return (
       <div>
-        Category not found, go to <Link to="/">main page</Link>
+        Category not found, go to <a href="/">main page</a>
       </div>
     );
   }

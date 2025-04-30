@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import { useRouter } from 'next/router';
 
 import {
   useConfirmModal,
@@ -22,7 +21,9 @@ export function AddToWishlistButton({ productId }: Props) {
   const [isLoading, setIsLoading] = useState(false);
   const { rootAttributes } = useFeatureSlicedDebug('feature/AddToWishlist');
   const loginModal = useConfirmModal();
-  const router = useRouter();
+  const router = {
+    push: (str) => null,
+  };
   const isAuthorized = useAppSelector(selectIsAuthorized);
   const isInWishlist = useAppSelector((state) =>
     selectIsInWishlist(state, productId),

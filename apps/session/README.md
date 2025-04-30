@@ -6,7 +6,7 @@
 
 ## 🚀 Features
 
-- 🔀 **React Router** for dynamic client-side routing
+- 🔀 **[React Router V7](https://reactrouter.com/7.5.3/home) (Remix successor)** as React framework
 - ⚙️ **Redux Toolkit** for predictable state management
 - 🌐 **RTK Query** for efficient data fetching and caching
 - 🧩 **Feature-Sliced Architecture (FSD)** for scalable and modular codebase
