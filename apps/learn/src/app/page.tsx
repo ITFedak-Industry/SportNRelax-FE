@@ -1,9 +1,5 @@
 'use server';
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from '@tanstack/react-query';
+import { PrefetchQueriesProvider } from '@src/app/PrefetchQueriesProvider';
 
 import { queryBlogPost } from '@src/entities/blog/api/categoryApi';
 
@@ -16,13 +12,11 @@ export default async function Page({
   params: Promise<{ id: string }>;
 }) {
   const { id = '15' } = await params;
-
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(queryBlogPost(id));
+  const queries = [queryBlogPost(id)];
 
   return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
+    <PrefetchQueriesProvider queries={queries}>
       <MainPage id={id} />
-    </HydrationBoundary>
+    </PrefetchQueriesProvider>
   );
 }
