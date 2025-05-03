@@ -1,6 +1,7 @@
 # Learn – Health & Sport Services Aggregator
 
-**Learn** is an SEO-optimized platform built with **Next.js**, **React Query**, and **Feature-Sliced Architecture (FSD)**. The app connects users with sport and health service providers and includes educational material, platform updates, and community blog content.
+**Browse** is an SEO-optimized platform built with **Next.js**, **React Query**, and **Feature-Sliced Architecture (FSD)**.
+The app is user-friendly intuitive UI to list and make customers easy find desired service
 
 ## 🌐 Live Demo
 
