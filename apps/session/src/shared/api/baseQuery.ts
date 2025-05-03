@@ -5,6 +5,7 @@ import {
   FetchBaseQueryError,
   FetchBaseQueryMeta,
 } from '@reduxjs/toolkit/query/react';
+
 import { env } from '../lib/env';
 
 export const baseQuery: BaseQueryFn<
@@ -14,9 +15,9 @@ export const baseQuery: BaseQueryFn<
   object,
   FetchBaseQueryMeta
 > = fetchBaseQuery({
-  baseUrl: env.VITE_API_ENDPOINT,
+  baseUrl: env.ENDPOINT,
   prepareHeaders: (headers, { getState }) => {
-    const { accessToken } = (getState() as RootState).session;
+    const { accessToken } = (getState() as RootState).user;
 
     if (accessToken) {
       headers.set('Authorization', `Bearer ${accessToken}`);

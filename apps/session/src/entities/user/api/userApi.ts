@@ -1,6 +1,6 @@
 import { USER_TAG, baseApi } from '../../../shared/api';
 import { mapUser } from '../lib/mapUser';
-import type { User } from '../model/types';
+import { User } from '../model/types';
 import type { UserDto } from './types';
 
 export const userApi = baseApi.injectEndpoints({
@@ -9,8 +9,10 @@ export const userApi = baseApi.injectEndpoints({
       query: () => ({
         url: `/me`,
       }),
+      transformResponse: (response: UserDto) => {
+        return mapUser(response);
+      },
       providesTags: [USER_TAG],
-      transformResponse: (response: UserDto) => mapUser(response),
     }),
   }),
 });

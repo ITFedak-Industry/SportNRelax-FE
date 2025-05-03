@@ -16,7 +16,6 @@ export async function baseQueryWithReauth(
   extraOptions: object,
 ): Promise<QueryReturnValue<unknown, FetchBaseQueryError, FetchBaseQueryMeta>> {
   const result = await baseQuery(args, api, extraOptions);
-
   // There could be logic for updating the access token via refresh token in the future
   // Now if the access token is invalid, logout session
   // @see https://redux-toolkit.js.org/rtk-query/usage/customizing-queries#preventing-multiple-unauthorized-errors

@@ -1,6 +1,6 @@
-export type UserId = Brand<Id, 'UserId'>;
+export type UserId = string;
 
 export type User = {
   id: UserId;
-  email: Email;
+  email: string;
 };
