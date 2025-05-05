@@ -1,0 +1,39 @@
+{
+  "name": "blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@repo/ui": "workspace:*",
+    "@tanstack/react-query": "^5.74.11",
+    "@tanstack/react-query-devtools": "^5.74.11",
+    "next": "15.0.0",
+    "react": "19.0.0-rc-65a56d0e-20241020",
+    "react-dom": "19.0.0-rc-65a56d0e-20241020"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/jest-config": "workspace:*",
+    "@repo/ts-config": "workspace:*",
+    "@tanstack/eslint-plugin-query": "^5.74.7",
+    "@testing-library/jest-dom": "^6.6.2",
+    "@testing-library/react": "^16.0.1",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "autoprefixer": "10.4.21",
+    "tailwindcss": "^3.4.17",
+    "msw": "^2.5.1",
+    "typescript": "^5"
+  }
+}

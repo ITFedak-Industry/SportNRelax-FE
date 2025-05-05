@@ -1,4 +1,4 @@
-# Learn – Health & Sport Services Aggregator
+# Browse – Health & Sport Services Aggregator
 
 **Browse** is an SEO-optimized platform built with **Next.js**, **React Query**, and **Feature-Sliced Architecture (FSD)**.
 The app is user-friendly intuitive UI to list and make customers easy find desired service

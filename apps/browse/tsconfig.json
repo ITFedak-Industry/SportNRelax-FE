@@ -1,23 +1,20 @@
 {
   "extends": "@repo/ts-config/appConfig.json",
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "baseUrl": ".",
+    "moduleResolution": "bundler",
     "paths": {
-      "@src/*": ["./src/core/*"]
+      "@src/*": ["./src/*"]
     },
-    "jsx": "preserve",
-    "types": ["jest", "node"]
+    "jsx": "react-jsx",
+    "rootDirs": [".", "./.react-router/types"],
+    "types": ["jest", "node", "vite/client"]
   },
   "include": [
-    "**/*.test.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "next-env.d.ts",
-    ".next/types/**/*.ts"
+    "**/*",
+    "**/.server/**/*",
+    "**/.client/**/*",
+    ".react-router/types/**/*"
   ],
   "exclude": ["node_modules"]
 }

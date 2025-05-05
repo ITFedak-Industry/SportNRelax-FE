@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": [
+    "next/typescript",
+    "plugin:@next/next/recommended",
+    "@repo/eslint-config/app.js"
+  ],
+  "plugins": ["@tanstack/query"],
+  "rules": {
+    "react/prop-types": [0]
+  },
+  "ignorePatterns": ["node_modules/", "tsconfig.json"]
+}

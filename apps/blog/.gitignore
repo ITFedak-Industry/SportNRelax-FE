@@ -1,11 +1,6 @@
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-
-# React Router
-/.react-router/
-/build/
-
 # dependencies
 /node_modules
 /.pnp
@@ -38,5 +33,10 @@ yarn-error.log*
 # env files (can opt-in for commiting if needed)
 .env*
 
+# vercel
+.vercel
+.swc
+
 # typescript
 *.tsbuildinfo
+next-env.d.ts
