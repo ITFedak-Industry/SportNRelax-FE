@@ -1,7 +1,3 @@
-export type ResponseServiceDto = {
-  data: ServiceDto[];
-};
-
 export type ServiceDto = {
   id: string;
   name: string;

@@ -57,20 +57,20 @@ The project follows the **Feature-Sliced Design (FSD)** methodology for scalable
 ```
 src/
 ├── app/           # App-level config and providers (Redux, routing, theming)
+├── pages/         # Full pages or large parts of a page in nested routing
+├── widgets/       # Reusable UI parts composed of features and entities (IssueList, UserProfile, etc.)  (optional)
+├── features/      # Reused implementations of entire product features (e.g., SendComment, AddToCart, UserSearch)
 ├── entities/      # Core domain models (e.g., user, vendor, blog)
-├── features/      # Functional units (e.g., blog creation, vendor search)
-├── pages/         # Next.js pages
-├── shared/        # Reusable components, UI, hooks, utils
-└── widgets/       # Page-level components (headers, footers, etc.)
+└── shared/        # Reusable components, UI, hooks, utils
 ```
 
-> Learn more: [Feature-Sliced Design](https://feature-sliced.design/)
+> Learn more: [Feature-Sliced Design](https://feature-sliced.github.io/documentation/docs/reference/layers#widgets)
 
 ## 🧑‍💻 Getting Started
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -80,17 +80,17 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## 🧪 Testing
 
 ```bash
-npm test
+pnpm test
 # or
-npm run test:watch
+pnpm run test:watch
 ```
 
 ---
 
 ## 📦 Dependencies
 
-- [Next.js](https://nextjs.org/) – For server-side rendering and SEO
-- [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/examples/basic/) – Powerful asynchronous state management for React
+- [React Router V7](https://reactrouter.com/7.6.0/home) – For server-side rendering and SEO
+- [Redux Toolkit & RTK Query](https://redux-toolkit.js.org/introduction/getting-started) – Powerful asynchronous state management for React
 - [Jest](https://jestjs.io/) – Testing framework
 - [ESLint](https://eslint.org/) – Code quality
 - [Feature-Sliced Design](https://feature-sliced.design/) – Architectural guideline

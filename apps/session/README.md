@@ -35,15 +35,15 @@ Following **Feature-Sliced Design**, the codebase is modular and organized aroun
 
 ```
 src/
-├── app/           # App-level setup (store, router, theming, providers)
-├── entities/      # Domain models (e.g., session, service)
-├── features/      # Business logic units (e.g., booking)
-├── pages/         # Route-specific views (e.g., /main, /services)
-├── shared/        # Reusable UI components, hooks, styles, utils
-└── widgets/       # Layout and UI blocks (e.g., Header, SessionCard)
+├── app/           # App-level config and providers (Redux, routing, theming)
+├── pages/         # Full pages or large parts of a page in nested routing
+├── widgets/       # Reusable UI parts composed of features and entities (IssueList, UserProfile, etc.)  (optional)
+├── features/      # Reused implementations of entire product features (e.g., SendComment, AddToCart, UserSearch)
+├── entities/      # Core domain models (e.g., user, vendor, blog)
+└── shared/        # Reusable components, UI, hooks, utils
 ```
 
-> Learn more: [Feature-Sliced Design](https://feature-sliced.design/)
+> Learn more: [Feature-Sliced Design](https://feature-sliced.github.io/documentation/docs/reference/layers#widgets)
 
 ---
 

@@ -12,7 +12,7 @@ export const serviceHandlers = [
 
       return HttpResponse.json(
         {
-          data: [{ id: '123' } as ServiceDto],
+          data: (await import('./services.json')).default,
         },
         { status: 200 },
       );
