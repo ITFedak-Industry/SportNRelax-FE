@@ -47,7 +47,7 @@ module.exports = {
     'object-curly-spacing': ['error', 'always'],
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    "react/prop-types": [0]
+    'react/prop-types': [0],
   },
   settings: {
     react: {
