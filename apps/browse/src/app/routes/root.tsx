@@ -2,11 +2,12 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
 import '@src/shared/base.css';
 
-import { StoreProvider } from '../StoreProvider';
-
 import '@src/app/apiMockWorker';
 
 import { browserEnv } from '@src/shared/lib';
+
+import { StoreProvider } from '../StoreProvider';
+import { ThemeProvider } from '../ThemeProvider';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -35,7 +36,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <StoreProvider>
-      <Outlet />
+      <ThemeProvider>
+        <Outlet />
+      </ThemeProvider>
     </StoreProvider>
   );
 }
