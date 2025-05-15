@@ -32,5 +32,56 @@
     "place": {
       "name": "Zen Wellness Center"
     }
+  },
+  {
+    "id": "srv2",
+    "name": "Massage Therapy",
+    "addons": [
+      {
+        "name": "Aromatherapy",
+        "price": 15
+      },
+      {
+        "name": "Hot Stones",
+        "price": 20
+      }
+    ],
+    "place": {
+      "name": "Zen Wellness Center"
+    }
+  },
+  {
+    "id": "srv2",
+    "name": "Massage Therapy",
+    "addons": [
+      {
+        "name": "Aromatherapy",
+        "price": 15
+      },
+      {
+        "name": "Hot Stones",
+        "price": 20
+      }
+    ],
+    "place": {
+      "name": "Zen Wellness Center"
+    }
+  },
+  {
+    "id": "srv2",
+    "name": "Massage Therapy",
+    "addons": [
+      {
+        "name": "Aromatherapy",
+        "price": 15
+      },
+      {
+        "name": "Hot Stones",
+        "price": 20
+      }
+    ],
+    "place": {
+      "name": "Zen Wellness Center"
+    }
   }
 ]

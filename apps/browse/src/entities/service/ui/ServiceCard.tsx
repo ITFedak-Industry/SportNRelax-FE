@@ -13,7 +13,7 @@ interface Props {
 
 export const ServiceCard: React.FC<Props> = ({ service }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, height: '100%' }}>
       <CardMedia
         sx={{ height: 140 }}
         image="/static/images/cards/contemplative-reptile.jpg"

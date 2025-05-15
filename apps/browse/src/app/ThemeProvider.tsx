@@ -1,9 +1,6 @@
 import { PropsWithChildren } from 'react';
 import { createTheme } from '@mui/material/styles';
-import {
-  ThemeProvider as MaterialThemeProvider,
-  CssBaseline,
-} from '@mui/material';
+import { ThemeProvider as MaterialThemeProvider } from '@mui/material';
 
 const theme = createTheme({
   breakpoints: {
@@ -44,7 +41,6 @@ const theme = createTheme({
 export const ThemeProvider: React.FC<PropsWithChildren> = (props) => {
   return (
     <MaterialThemeProvider theme={theme}>
-      <CssBaseline />
       {props.children}
     </MaterialThemeProvider>
   );

@@ -1,3 +1,6 @@
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
 import { ServiceCard, useGetServicesQuery } from '@src/entities/service';
 import { FilterBy } from '@src/entities/service/ui/FilterBy';
 import { SortBy } from '@src/entities/service/ui/SortBy';
@@ -19,13 +22,27 @@ export function MainPage() {
   }
 
   return (
-    <div>
-      <Search onSearch={(value) => console.log('value', value)} />
-      <FilterBy />
-      <SortBy items={sortByItems} defaultValue={sortByItems[0].value} />
-      {data.map((service) => {
-        return <ServiceCard key={service.id} service={service} />;
-      })}
-    </div>
+    <Container>
+      <Grid container spacing={2}>
+        <Grid size={4} maxWidth={250}>
+          <FilterBy />
+        </Grid>
+        <Grid size="grow">
+          <Stack spacing={2}>
+            <Stack spacing={2} direction="row" justifyContent="space-between">
+              <Search onSearch={(value) => console.log('value', value)} />
+              <SortBy items={sortByItems} defaultValue={sortByItems[0].value} />
+            </Stack>
+            <Grid container spacing={2}>
+              {data.map((service) => (
+                <Grid key={service.id} size={4}>
+                  <ServiceCard service={service} />
+                </Grid>
+              ))}
+            </Grid>
+          </Stack>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
