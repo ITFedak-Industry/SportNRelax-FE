@@ -16,15 +16,21 @@ export const ServiceCard: React.FC<Props> = ({ service }) => {
     <Card sx={{ height: '100%' }}>
       <CardMedia
         sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
+        image={service.image}
         title="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {service.name}
         </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+          {service.price} / {service.duration}
+        </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
           {service.place.name}
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          {service.place.address}
         </Typography>
       </CardContent>
       <CardActions>

@@ -1,6 +1,8 @@
 export type ServiceDto = {
   id: string;
   name: string;
-  addons: { name: string; price: number }[];
-  place: { name: string };
+  price: number;
+  duration: number;
+  image: string;
+  place: { name: string; address: string };
 };

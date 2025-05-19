@@ -1,6 +1,9 @@
 /dist
 **/prisma
 
+.react-router/
+build/
+
 .turbo
 
 coverage
