@@ -34,8 +34,8 @@ export function MainPage() {
               <SortBy items={sortByItems} defaultValue={sortByItems[0].value} />
             </Stack>
             <Grid container spacing={2}>
-              {data.map((service) => (
-                <Grid key={service.id} size={4}>
+              {data.map((service, idx) => (
+                <Grid key={idx} size={{ xs: 12, md: 6, lg: 4 }}>
                   <ServiceCard service={service} />
                 </Grid>
               ))}

@@ -6,10 +6,10 @@ const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0, // default
-      sm: 600, // default
-      md: 900, // default
-      lg: 1200, // default
-      xl: 1536, // default
+      sm: 320, // default
+      md: 768, // default
+      lg: 1024, // default
+      xl: 1440, // default
       // custom example: add "xxl"
       // xxl: 1800,
     },

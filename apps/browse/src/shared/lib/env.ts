@@ -4,6 +4,7 @@ const envVariablesSchema = z.object({
   API_ENDPOINT: z.string().url(),
   API_DELAY: z.number().default(0),
   NODE_ENV: z.string(),
+  ENABLE_MOCKING: z.boolean().default(false),
 });
 
 export type ENV = z.infer<typeof envVariablesSchema>;
@@ -35,10 +36,10 @@ function getAll(): ENV {
   if (!IS_BROWSER) {
     return _env;
   } else {
-    return window.ENV;
+    return window.__APP_ENV__;
   }
 }
 
 export const env = getAll();
 
-export const browserEnv = `window.ENV = ${JSON.stringify(env)};`;
+export const browserEnv = `window.__APP_ENV__ = ${JSON.stringify(env)};`;

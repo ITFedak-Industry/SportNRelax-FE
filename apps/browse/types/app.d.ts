@@ -4,7 +4,13 @@ declare global {
    */
   // eslint-disable-next-line no-global-assign
   interface Window {
-    ENV: import('../src/shared/lib/env').ENV;
+    __APP_ENV__: import('../src/shared/lib/env').ENV;
+  }
+
+  declare namespace NodeJS {
+    interface ProcessEnv {
+      NODE_ENV: 'prod';
+    }
   }
 
   /**

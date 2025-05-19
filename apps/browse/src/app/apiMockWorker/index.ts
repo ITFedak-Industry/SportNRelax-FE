@@ -1,15 +1,15 @@
 import { env, IS_BROWSER } from '@src/shared/lib';
 
 async function enableMocking() {
-  if (env.NODE_ENV !== 'dev') {
+  if (env.ENABLE_MOCKING === false) {
     return;
   }
 
   if (IS_BROWSER) {
     const { worker } = await import(`./browser`);
-    return worker.start();
+    worker.start();
   } else {
-    const { server } = await import(`./node`);
+    const { server } = await import(`./server`);
     server.listen();
   }
 }

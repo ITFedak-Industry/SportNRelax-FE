@@ -2,12 +2,14 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
 import '@src/shared/base.css';
 
-import '@src/app/apiMockWorker';
-
 import { browserEnv } from '@src/shared/lib';
 
 import { StoreProvider } from '../StoreProvider';
 import { ThemeProvider } from '../ThemeProvider';
+
+if (process.env.NODE_ENV !== 'prod') {
+  import('@src/app/apiMockWorker');
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
