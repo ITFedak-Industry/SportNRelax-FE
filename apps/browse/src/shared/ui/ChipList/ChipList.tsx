@@ -1,23 +1,21 @@
-import { useState } from 'react';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import DoneIcon from '@mui/icons-material/Done';
 
-interface Props {
-  items: { name: string; value: string }[];
-  defaultValue?: string;
-}
+import { UseChipListReturn } from './useChipList';
 
-export const SortBy: React.FC<Props> = ({ items, defaultValue }) => {
-  const [selected, setSelected] = useState(defaultValue);
-
+export const ChipList = <Values,>({
+  items,
+  selected,
+  onChange,
+}: UseChipListReturn<Values>) => {
   return (
-    <Stack direction="row" spacing={1}>
+    <Stack direction="row" spacing={1} alignItems="center">
       {items.map(({ name, value }) => {
         const isSelected = selected === value;
         return (
           <Chip
-            key={value}
+            key={value as React.Key}
             sx={{ borderRadius: '5px' }}
             icon={
               <span style={{ visibility: isSelected ? 'visible' : 'hidden' }}>
@@ -25,7 +23,7 @@ export const SortBy: React.FC<Props> = ({ items, defaultValue }) => {
               </span>
             }
             label={name}
-            onClick={() => setSelected(value)}
+            onClick={() => onChange(value)}
             variant={isSelected ? 'filled' : 'outlined'}
           />
         );

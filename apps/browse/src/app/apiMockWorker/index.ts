@@ -9,8 +9,8 @@ async function enableMocking() {
     const { worker } = await import(`./browser`);
     worker.start();
   } else {
-    const { server } = await import(`./server`);
-    server.listen();
+    // const { server } = await import(`./server`);
+    // server.listen();
   }
 }
 
