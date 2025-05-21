@@ -4,13 +4,14 @@ import { useLeafletCssLoader } from './useLeafletCssLoader';
 type Coordinate = [number, number];
 
 interface Props {
+  center: Coordinate;
   markers: {
     position: Coordinate;
     popup: string | JSX.Element;
   }[];
 }
 
-export const Map: React.FC<Props> = ({ markers }) => {
+export const Map: React.FC<Props> = ({ center, markers }) => {
   const { loading, error } = useLeafletCssLoader();
 
   if (loading) {
@@ -23,7 +24,7 @@ export const Map: React.FC<Props> = ({ markers }) => {
 
   return (
     <MapContainer
-      center={[51.505, -0.09]}
+      center={center}
       zoom={13}
       style={{ height: '100vh', width: '100%' }}
     >

@@ -1,3 +1,3 @@
-import { serviceHandlers } from '@src/entities/service/api/__mocks__/serviceHandlers';
+import { placeHandlers } from '@src/entities/place/api/__mocks__/placeHandlers';
 
-export const handlers = [...serviceHandlers];
+export const handlers = [...placeHandlers];

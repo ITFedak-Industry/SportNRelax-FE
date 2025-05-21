@@ -5,13 +5,14 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-import { Service } from '../model/types';
+import { Place, Service } from '../../../entities/place/model/types';
 
 interface Props {
+  place: Place;
   service: Service;
 }
 
-export const ServiceCard: React.FC<Props> = ({ service }) => {
+export const ServiceCard: React.FC<Props> = ({ place, service }) => {
   return (
     <Card sx={{ height: '100%' }}>
       <CardMedia
@@ -27,10 +28,10 @@ export const ServiceCard: React.FC<Props> = ({ service }) => {
           {service.price} / {service.duration}
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          {service.place.name}
+          {place.name}
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          {service.place.address}
+          {place.address}
         </Typography>
       </CardContent>
       <CardActions>

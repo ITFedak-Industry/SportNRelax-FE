@@ -3,19 +3,19 @@ import { DefaultBodyType, HttpResponse, delay, http } from 'msw';
 import { ApiResponse } from '@src/shared/api';
 import { env } from '@src/shared/lib';
 
-import { ServiceDto } from '../types';
+import { PlaceDto } from '../types';
 
-import { mockServices } from './mockServices';
+import { mockPlaces } from './mockPlaces';
 
-export const serviceHandlers = [
-  http.get<{ serviceId: string }, DefaultBodyType, ApiResponse<ServiceDto[]>>(
-    `${env.API_ENDPOINT}/services`,
+export const placeHandlers = [
+  http.get<object, DefaultBodyType, ApiResponse<PlaceDto[]>>(
+    `${env.API_ENDPOINT}/places`,
     async () => {
       await delay(env.API_DELAY);
 
       return HttpResponse.json(
         {
-          data: mockServices,
+          data: mockPlaces,
         },
         { status: 200 },
       );
