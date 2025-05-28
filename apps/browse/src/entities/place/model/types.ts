@@ -11,5 +11,5 @@ export type Service = {
   name: string;
   price: number;
   duration: number;
-  image: string;
+  images: string[];
 };

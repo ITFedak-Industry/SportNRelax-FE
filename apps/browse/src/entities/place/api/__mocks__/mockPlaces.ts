@@ -11,8 +11,9 @@ export const mockPlaces: PlaceDto[] = Array.from({ length: 10 }).map(
       name: ['Massage Therapy', 'Aromatherapy', 'Sauna', 'Facial'][j % 4],
       price: 150 + j * 50,
       duration: 60 + j * 10,
-      image:
+      images: [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHnI2qM881yQAtVvoUCCozYs36auxMXP-Iqg&s',
+      ],
     })),
   }),
 );

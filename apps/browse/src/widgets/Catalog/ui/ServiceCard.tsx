@@ -17,7 +17,7 @@ export const ServiceCard: React.FC<Props> = ({ place, service }) => {
     <Card sx={{ height: '100%' }}>
       <CardMedia
         sx={{ height: 140 }}
-        image={service.image}
+        image={service.images[0]}
         title="green iguana"
       />
       <CardContent>

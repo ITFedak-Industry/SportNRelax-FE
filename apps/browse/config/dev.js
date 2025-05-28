@@ -1,6 +1,7 @@
 module.exports = {
   env: {
     LOG_LEVEL: 'debug',
-    ENABLE_MOCKING: true,
+    API_ENDPOINT: 'http://localhost:3002',
+    ENABLE_MOCKING: false,
   },
 };
