@@ -7,11 +7,11 @@ async function enableMocking() {
 
   if (IS_BROWSER) {
     const { worker } = await import(`./browser`);
-    worker.start();
+    await worker.start();
   } else {
-    // const { server } = await import(`./server`);
-    // server.listen();
+    const { server } = await import(`./server`);
+    server.listen();
   }
 }
 
-enableMocking();
+await enableMocking();

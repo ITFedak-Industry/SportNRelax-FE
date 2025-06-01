@@ -16,7 +16,7 @@ import { StoreProvider } from '../StoreProvider';
 import { ThemeProvider } from '../ThemeProvider';
 
 if (process.env.NODE_ENV !== 'prod') {
-  import('@src/app/apiMockWorker');
+  await import('@src/app/apiMockWorker');
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {

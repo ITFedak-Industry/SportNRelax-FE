@@ -1,7 +1,10 @@
-import { type RouteConfig, index } from '@react-router/dev/routes';
+import { type RouteConfig, index, route } from '@react-router/dev/routes';
 
 async function bootstrap() {
-  return [index('./home.tsx')] satisfies RouteConfig;
+  return [
+    index('./home.tsx'),
+    route('/service/:id', './service.tsx'),
+  ] satisfies RouteConfig;
 }
 
 // eslint-disable-next-line import/no-default-export

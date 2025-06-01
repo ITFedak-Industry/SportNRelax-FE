@@ -9,7 +9,7 @@ import { mockPlaces } from './mockPlaces';
 
 export const placeHandlers = [
   http.get<object, DefaultBodyType, ApiResponse<PlaceDto[]>>(
-    `${env.API_ENDPOINT}/places`,
+    `${env.CATALOG_API_ENDPOINT}/places`,
     async () => {
       await delay(env.API_DELAY);
 

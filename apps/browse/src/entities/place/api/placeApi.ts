@@ -1,17 +1,23 @@
-import { SERVICE_TAG, baseApi, ApiResponse } from '@src/shared/api';
+import {
+  SERVICE_TAG,
+  baseApi,
+  ApiResponse,
+  catalogHttpClient,
+} from '@src/shared/api';
 
 import { mapPlace } from '../lib/mapPlace';
 import { Place } from '../model/types';
 
 import type { PlaceDto } from './types';
 
-export const placeApi = baseApi.injectEndpoints({
+const placeApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
-    getPlaces: build.query<Place[], void, ApiResponse<PlaceDto[]>>({
-      query: () => ({
-        url: `/places`,
-      }),
-      transformResponse: ({ data }) => data.map(mapPlace),
+    getPlaces: build.query<Place[], void>({
+      queryFn: async () => {
+        const { data } =
+          await catalogHttpClient.get<ApiResponse<PlaceDto[]>>('/places');
+        return { data: data.map(mapPlace) };
+      },
       providesTags: [SERVICE_TAG],
     }),
   }),

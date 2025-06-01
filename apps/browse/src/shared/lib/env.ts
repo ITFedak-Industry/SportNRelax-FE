@@ -1,7 +1,7 @@
 import { ZodError, z } from 'zod';
 
 const envVariablesSchema = z.object({
-  API_ENDPOINT: z.string().url(),
+  CATALOG_API_ENDPOINT: z.string().url(),
   API_DELAY: z.number().default(0),
   NODE_ENV: z.string(),
   ENABLE_MOCKING: z.boolean().default(false),
