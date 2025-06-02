@@ -4,6 +4,7 @@ export const mockService: Service = {
   id: 'srv-001',
   name: 'Premium Haircut & Styling',
   price: 75,
+  description: 'That is sick',
   duration: 45, // duration in minutes
   images: [
     'https://example.com/images/service1.jpg',

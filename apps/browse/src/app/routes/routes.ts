@@ -3,7 +3,7 @@ import { type RouteConfig, index, route } from '@react-router/dev/routes';
 async function bootstrap() {
   return [
     index('./home.tsx'),
-    route('/service/:id', './service.tsx'),
+    route('/services/:id', './service.tsx'),
   ] satisfies RouteConfig;
 }
 

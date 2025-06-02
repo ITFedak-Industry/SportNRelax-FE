@@ -3,6 +3,7 @@ export type Service = {
   name: string;
   price: number;
   duration: number;
+  description: string;
   images: string[];
   place: {
     id: string;
