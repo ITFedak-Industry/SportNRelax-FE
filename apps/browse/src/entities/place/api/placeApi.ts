@@ -1,8 +1,7 @@
 import { baseApi, ApiResponse, catalogHttpClient } from '@src/shared/api';
 
 import { mapPlace } from '../lib/mapPlace';
-import { Place } from '../model/types';
-
+import type { Place } from '../model/types';
 import type { PlaceDto } from './types';
 
 const placeApi = baseApi.injectEndpoints({

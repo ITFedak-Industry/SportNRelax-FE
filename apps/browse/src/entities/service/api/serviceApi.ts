@@ -1,8 +1,8 @@
 import {
-  SERVICE_TAG,
   baseApi,
   ApiResponse,
   catalogHttpClient,
+  sessionHttpClient,
 } from '@src/shared/api';
 
 import { Service } from '../model/types';
@@ -15,11 +15,13 @@ export async function getServiceById(id: string): Promise<Service> {
 
 const serviceApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
-    getServiceById: build.query({
-      queryFn: async (id: string) => ({ data: await getServiceById(id) }),
-      providesTags: [SERVICE_TAG],
+    bookService: build.mutation<void, void>({
+      queryFn: async () => {
+        await sessionHttpClient.post('/', { body: null });
+        return { data: undefined };
+      },
     }),
   }),
 });
 
-export const { useGetServiceByIdQuery } = serviceApi;
+export const { useBookServiceMutation } = serviceApi;
