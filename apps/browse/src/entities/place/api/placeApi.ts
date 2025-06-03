@@ -1,9 +1,4 @@
-import {
-  SERVICE_TAG,
-  baseApi,
-  ApiResponse,
-  catalogHttpClient,
-} from '@src/shared/api';
+import { baseApi, ApiResponse, catalogHttpClient } from '@src/shared/api';
 
 import { mapPlace } from '../lib/mapPlace';
 import { Place } from '../model/types';
@@ -18,7 +13,6 @@ const placeApi = baseApi.injectEndpoints({
           await catalogHttpClient.get<ApiResponse<PlaceDto[]>>('/places');
         return { data: data.map(mapPlace) };
       },
-      providesTags: [SERVICE_TAG],
     }),
   }),
 });

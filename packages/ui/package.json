@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --fix",
+    "lint": "tsc --noEmit && eslint . --ext .ts --ext .tsx --max-warnings 0 --fix",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",

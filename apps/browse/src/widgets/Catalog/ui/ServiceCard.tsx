@@ -5,11 +5,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-import { Place, Service } from '../../../entities/place/model/types';
+import { Place } from '../../../entities/place/model/types';
 
 interface Props {
   place: Place;
-  service: Service;
+  service: Place['services'][number];
 }
 
 export const ServiceCard: React.FC<Props> = ({ place, service }) => {
