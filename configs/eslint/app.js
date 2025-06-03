@@ -48,13 +48,13 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/prop-types': [0],
-    "react/function-component-definition": [
-      "error",
+    'react/function-component-definition': [
+      'error',
       {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function"
-      }
-    ]
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
   },
   settings: {
     react: {

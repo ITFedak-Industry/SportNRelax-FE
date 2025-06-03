@@ -12,10 +12,11 @@ export const BookService = ({ service }: Props) => {
 
   return (
     <>
-      <Button onClick={() => bookService()}>Confirm booking</Button>
-      <Calendar></Calendar>
-      <TimeSlots></TimeSlots>
-      
+      <Button onClick={() => bookService()}>
+        Confirm booking {sessions?.toString()}
+      </Button>
+      {/* <Calendar></Calendar>
+      <TimeSlots></TimeSlots> */}
     </>
   );
 };
