@@ -1,6 +1,7 @@
 {
   "extends": "@repo/ts-config/appConfig.json",
   "compilerOptions": {
+    "module": "es2022",
     "baseUrl": ".",
     "paths": {
       "@src/*": ["./src/*"]

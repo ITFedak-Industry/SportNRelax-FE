@@ -4,7 +4,7 @@ import '@src/shared/base.css';
 
 import { StoreProvider } from '../StoreProvider';
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <head>
@@ -20,13 +20,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </body>
     </html>
   );
-}
+};
 
-// eslint-disable-next-line import/no-default-export
-export default function App() {
+const App: React.FC = () => {
   return (
     <StoreProvider>
       <Outlet />
     </StoreProvider>
   );
-}
+};
+
+// eslint-disable-next-line import/no-default-export
+export default App;

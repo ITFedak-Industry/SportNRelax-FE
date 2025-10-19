@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import { makeStore } from './appStore';
 
-export function StoreProvider({ children }: { children: React.ReactNode }) {
+export const StoreProvider = ({ children }: { children: React.ReactNode }) => {
   const storeRef = useRef<AppStore>();
   if (!storeRef.current) {
     storeRef.current = makeStore();
@@ -14,4 +14,4 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       {children}
     </Provider>
   );
-}
+};

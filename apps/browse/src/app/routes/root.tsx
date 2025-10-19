@@ -19,7 +19,7 @@ if (process.env.NODE_ENV !== 'prod') {
   await import('@src/app/apiMockWorker');
 }
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <head>
@@ -40,10 +40,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </body>
     </html>
   );
-}
+};
 
-// eslint-disable-next-line import/no-default-export
-export default function App() {
+const App = () => {
   return (
     <StoreProvider>
       <ThemeProvider>
@@ -51,9 +50,12 @@ export default function App() {
       </ThemeProvider>
     </StoreProvider>
   );
-}
+};
 
-export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+// eslint-disable-next-line import/no-default-export
+export default App;
+
+export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   if (isRouteErrorResponse(error)) {
     return (
       <>
@@ -75,4 +77,4 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   } else {
     return <h1>Unknown Error</h1>;
   }
-}
+};

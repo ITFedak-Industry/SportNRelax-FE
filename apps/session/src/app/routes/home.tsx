@@ -3,9 +3,8 @@ import Button from '@mui/material/Button';
 
 import { MainPage } from '@src/pages/main';
 
-// eslint-disable-next-line import/no-default-export
-export default function App() {
-  const [name, setName] = useState('asdf');
+const App = () => {
+  const [name] = useState('asdf');
   return (
     <>
       <p className="text-3xl font-bold underline">Hello world! {name}</p>
@@ -13,4 +12,7 @@ export default function App() {
       <Button variant="contained">Hello world</Button>
     </>
   );
-}
+};
+
+// eslint-disable-next-line import/no-default-export
+export default App;

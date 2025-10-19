@@ -1,16 +1,18 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 import { baseApi } from '../shared/api';
-
-import { rootReducer } from './rootReducer';
+import { userSlice } from '@src/entities/user/model/slice';
 
 export function makeStore() {
   const store = configureStore({
     devTools: {
       name: 'Session',
     },
-    reducer: rootReducer,
+    reducer: combineReducers({
+      [userSlice.reducerPath]: userSlice.reducer,
+      [baseApi.reducerPath]: baseApi.reducer,
+    }),
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(baseApi.middleware),
   });
